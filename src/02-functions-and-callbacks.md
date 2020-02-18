@@ -62,5 +62,11 @@ Arrow functions also have their own execution context:
 
 ![arrow-2](/img/02-arrow-execution.png)
 
+The arrow function in the multiply example can be shortened even further. So short, it's hard to remember there is seperate memeory allocation going on and a brand new execution context.
+
+```js
+const result = copyArrayAndManipulate([1,2,3], input => input*2);
+```
+
 ## Pair Programming
 
