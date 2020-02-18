@@ -70,3 +70,16 @@ const result = copyArrayAndManipulate([1,2,3], input => input*2);
 
 ## Pair Programming
 
+The most effective way to grow as a software engineer. People can fall into some of the following habits / personas:
+
+_Researcher_ avoids blocks by reading everything they can find on their block/bug
+
+_Stackoverflower_ Uses code snippets to fix bug without knowing how they work
+
+Pair programming:
+
+* Tackle blocks with a partner
+* Stay focused on the problem
+* Refine technical communication
+* Collaborate to solve problem
+
