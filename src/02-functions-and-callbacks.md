@@ -20,8 +20,47 @@ Often we write code that does somethiing, often to find out that we want to chan
 
 ![hof-repeating](/img/02-hof-repeating.png)
 
+There is a better way to handle this scenario. We can pass in part of the functionality. This is what's known as 'Higher Order Functions'.
+
+![hof-short](/img/02-hof-short.png)
+
+## Higher Order Functions Example
+
+Here we are passing our function and instruction on what to do, this itself is a function. This means each of these functions have their own execution context and memory assignment. The execution is also maintained by the callstack.
+
+![hof](/img/02-hof-1.png)
+
+![hof-2](/img/02-hof-2.png)
+
 ## Callbacks & Higher Order Functions
+
+Functions in JavaScript are first class objects. This is to say tehy can co-exist with and can be treated like any other javaScript object.
+
+1. Assigned to variables and properties of other objects
+2. Passed as arguments into functions
+3. Returned as values from functions
+
+**Higher-order functions** takes in—or passes out—a function. It's also just a term to describe these functions. Any function that does it we call that. There's nothing different about them inherently.
+
+**Callbacks and Higher Order Functions simplify our code and keep it DRY**.
+
+_Declarative readable code:_ Map, filter, reduce—the most readable way to write code to work with data
+
+_Codesmith & pro interview prep:_ One of the most popular topics to test in interview both for Codesmith and mod/senio level job interviews
+
+_Asynchronous JavaScript:_ Callbacks are a core aspect of async JavaScript, and are under-the-hood of promises, async/await
 
 ## Arrow Functions
 
+Arrow functions are a short hand way to save functions.
+
+They can be written such:
+
+![arrow](/img/02-arrow.png)
+
+Arrow functions also have their own execution context:
+
+![arrow-2](/img/02-arrow-execution.png)
+
 ## Pair Programming
+
