@@ -76,10 +76,11 @@ _Researcher_ avoids blocks by reading everything they can find on their block/bu
 
 _Stackoverflower_ Uses code snippets to fix bug without knowing how they work
 
+It's not that these personas are bad, but you need to balance them. It's ok to be reading and looking at others code, but don't do it too long. Seek to understand the code. Don't put off dealing with the block.
+
 Pair programming:
 
 * Tackle blocks with a partner
 * Stay focused on the problem
 * Refine technical communication
 * Collaborate to solve problem
-
