@@ -119,4 +119,39 @@ In the industry, we call this "Closure".
 
 ## Multiple Closure Instances
 
+In the following code:
+
+```js
+function outer() {
+    let counter = 0;
+    function incrementCounter() {
+        counter++;
+        console.log(counter);
+    }
+    return incrementCounter;
+}
+
+const myFunc = outer();
+myFunc();
+myFunc();
+
+const anotherFunc = outer();
+anotherFunc();
+anotherFunc();
+```
+
+Here you would see in the console `1, 2, 1, 2`. The reason is that for each time `outer` was invoked, you get a brand new execution context. Therefore when that returns, the backpack (Closure) exists for that run.
+
 ## Practical Applications
+
+Closure gives our functions persistent memories and entirely new toolkit for writing professional code.
+
+**Helper functions:** Everyday professional helper function like 'once' and 'memoize'
+
+**Iterators and generators:** Which use lexical scoping and closure to achieve the most contemporary patters for handling data in JavaScript
+
+**Module pattern:** Preserve state for the life of an application without polluting the global namespace
+
+**Asynchronous JavaScipt:** Callbacks and Promises rely on closure to persist state in an asynchronous environment
+
+_Memoization is giving our functions persistant memories of their previous input output combinations._ e.g. create a method that does some big calculation on an input. Store that input in a key, value pair. Next time we are given an input, check the store for that key, if it matches, return the value without performing the calculation again.
