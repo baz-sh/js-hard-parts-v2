@@ -12,3 +12,5 @@ Teacher: [Will Sentance](https://twitter.com/willsentance)
 * [Async JavaScript](src/04-async-js.md)
 * [Promises](src/05-promises.md)
 * [Classes and Prototypes](src/06-classes-and-prototypes.md)
+
+
