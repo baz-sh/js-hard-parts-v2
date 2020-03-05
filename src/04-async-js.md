@@ -67,7 +67,7 @@ There are other things like "local storage", "indexdb" etc. What's important is 
 ## Web API Example
 
 ```js
-function printHell() { console.log("Hello");}
+function printHello() { console.log("Hello");}
 
 setTimeout(printHello, 1000);
 
@@ -80,6 +80,21 @@ This is processed / broken down as below:
 
 ## Web API Rules
 
+As the browser has functionality we can lean on. e.g. creating a timeout, which is a browser / platform function, not JS, we are interacting with a world outside of JS. This means we need rules.
+
+```js
+function printHello(){console.log("Hello");}
+function blockFor1Sec() {
+    // blocks the JS thread for 1 sec, using a loop or something
+}
+
+setTimeout(printHello,0);
+blockFor1Sec();
+console.log("Me first!");
+```
+
 ## Callback Queue & Event Loop
 
-## Callback Hell & Async
+When we use things like `setTimeout` there is another queue in play. This is called the event loop. It is a queue of callbacks.
+
+All code on the call stack has to be completed before anything from the event loop will be put on that stack. If the call stack is empty, it checks the queue and puts anything in there on the call stack. If not it just waits.
