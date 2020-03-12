@@ -28,6 +28,18 @@ Fetch initiates the network request through the web browser, when the request is
 
 ## Promises Example: then
 
+When the promise is complete and the data has been resolved and assigned within the promise object, then you can access it via the `then` method.
+
+In the example, the display function is passed into the array of futureData's onFulfilled property to be run when completed.
+
+![then](/img/05-then.png)
+
+![then-2](/img/05-then-2.png)
+
+Once the data comes back from twitter, the value is placed in `futureData`'s value property. This in turn triggers the onFulfilled array of functions to run. In this case `display`.
+
+![then-complete](/img/05-then-complete.png)
+
 ## Web APIs & Promises Example: fetch
 
 ## Web APIs & Promises Example: then
