@@ -40,6 +40,14 @@ Once the data comes back from twitter, the value is placed in `futureData`'s val
 
 ![then-complete](/img/05-then-complete.png)
 
+**_then_ method and functionality to call on completion...**
+
+Any code we want to run on the returned data must also be saved on the promise object.
+
+Added using `.then` method to the hidden property `onFulfilment`.
+
+Promise objects will automatically trigger the attached function to run (with its input being the returned data).
+
 ## Web APIs & Promises Example: fetch
 
 ## Web APIs & Promises Example: then
