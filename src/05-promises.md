@@ -50,6 +50,8 @@ Promise objects will automatically trigger the attached function to run (with it
 
 ## Web APIs & Promises Example: fetch
 
+
+
 ## Web APIs & Promises Example: then
 
 ## Web APIs & Promises Example: Microtask Queue
