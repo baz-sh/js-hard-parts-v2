@@ -50,9 +50,13 @@ Promise objects will automatically trigger the attached function to run (with it
 
 ## Web APIs & Promises Example: fetch
 
+Here is a breakdown and overview of how `fetch` works behind the scenes.
 
+![fetch-example](/img/05-fetch-example.png)
 
 ## Web APIs & Promises Example: then
+
+The promise object is designed by JS to automatically trigger the functions in the array of `onCompleted` to run with the value of the promise as the input when the value gets updated (e.g. when resolved the tweets from a twitter api call).
 
 ## Web APIs & Promises Example: Microtask Queue
 
