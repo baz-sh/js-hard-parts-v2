@@ -58,6 +58,10 @@ Here is a breakdown and overview of how `fetch` works behind the scenes.
 
 The promise object is designed by JS to automatically trigger the functions in the array of `onCompleted` to run with the value of the promise as the input when the value gets updated (e.g. when resolved the tweets from a twitter api call).
 
+When you add a function with `then` this function gets added to the `onCompletion` array. When the value gets updated (e.g. when a network call resolves) the then function is called with the value field passed as the argument.
+
+![then-example](/img/05-then-example.png)
+
 ## Web APIs & Promises Example: Microtask Queue
 
 ## Promises Review
