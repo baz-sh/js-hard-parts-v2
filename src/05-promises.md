@@ -64,4 +64,7 @@ When you add a function with `then` this function gets added to the `onCompletio
 
 ## Web APIs & Promises Example: Microtask Queue
 
+
+
+
 ## Promises Review
