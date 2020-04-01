@@ -47,7 +47,21 @@ And the functionality I need to have for each user (again simplifying)
 
 How could I store my data and functionality together in one place?
 
+### Objects store functions with their associated data
 
+This is the principle of encapsualtion - and it's going to transform how we  can 'reason about' our code!
+
+```js
+const user1 = {
+    name: "Sid",
+    score: 3,
+    increment: function() {user1.score ++}
+};
+
+user1.increment(); //user1.score -> 4
+```
+
+_Let's keeo creating our objects. What alternative techniques do we have for creating these objects?_
 
 ## Factory Functions
 
