@@ -64,7 +64,8 @@ When you add a function with `then` this function gets added to the `onCompletio
 
 ## Web APIs & Promises Example: Microtask Queue
 
+The microtask queue is used when you create promises. This is invoked as part of the promise chain. Any function that is attached to a promise object via the `then` method doesn't go into the callback queue, it goes into the microtask queue. When there is nothing on the callstack the event loop will first check the microtask queue then the callback queue.
 
-
+![micro-task](/img/05-microtask.png)
 
 ## Promises Review
