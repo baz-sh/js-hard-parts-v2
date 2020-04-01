@@ -69,3 +69,27 @@ The microtask queue is used when you create promises. This is invoked as part of
 ![micro-task](/img/05-microtask.png)
 
 ## Promises Review
+
+Problems:
+
+* 99% of developers have no idea how (Promises) are working under the hood
+* Debugging becomes super-hard as a result
+* Developers fail technical interviews
+
+Benefits:
+
+* Cleaner readby style with pseudo-synchronous style code
+* Nice error handline process
+
+If you want to add a function to the `onRejection` array of a promise object (the array that runs when things fail) then you can do this in a couple of ways.
+
+1. `futureData.catch(someFunction)`
+2. `futureData.then(successFunction, rejectFunction)`
+
+**We have fules for the execution of our asynchronously delayed code**. Hold promise-deferred functions in a microtask queue and callback funtion in a task queue (Callback queue) when the Web Browser Feature (API) finishes.
+
+Add the function to the Call stack (i.e. run the function) when:
+
+* Call stack is empty & all the global code run (Have the Event Loop check this condition)
+
+Prioritize functions in the microtask queue over the Callback queue.
