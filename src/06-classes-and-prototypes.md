@@ -63,6 +63,21 @@ user1.increment(); //user1.score -> 4
 
 _Let's keeo creating our objects. What alternative techniques do we have for creating these objects?_
 
+### Creating user2 using dot notation
+
+Declare an empty object and add properties with dot notation
+
+```js
+const user2 = {};
+
+//assign properties to that object
+user2.name =  "Lem";
+user2.score = 6;
+user2.increment = function() {
+    user2.score++;
+};
+```
+
 ## Factory Functions
 
 ## Factory Functions Example
