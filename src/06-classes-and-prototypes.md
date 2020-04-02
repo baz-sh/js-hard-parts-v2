@@ -155,7 +155,9 @@ When JS doesn't find a given property (method or data) on an object it goes to t
 
 ## Prototype Chain Example: Implicit Parameters
 
+When you use `Object.create()` it creates an empty object with a hidden `__proto__` property.
 
+When you call `.increment()` on an object JS will look up the prototype chain to see if it can find the method. It does, and on the left of the .increment call `this` will be bound to the object the call has been invoked on. e.g. `user1.increment()`. This will access user1's score property that is used to increment.
 
 ## hasOwnProperty Method
 
