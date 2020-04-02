@@ -34,7 +34,7 @@ The Object-oriented paradigm aims is to let us achieve these three goals.
 
 ## Object Dot Notation
 
-So if I'm storing each user in my app with their respective data (let's simplofy)
+So if I'm storing each user in my app with their respective data (let's simplify)
 
 | User 1 | User 2 |
 | ---- | ---- |
@@ -185,10 +185,9 @@ When you run the `user1.hasOwnProperty('score')` what happens is JS looks for th
 
 ![proto-object](/img/06-proto-object.png)
 
-
-## this Keyword
-
 ## Arrow Function Scoppe & this
+
+
 
 ## Prototype Chain Review
 
