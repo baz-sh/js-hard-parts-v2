@@ -80,13 +80,82 @@ user2.increment = function() {
 
 ## Factory Functions
 
+`Object.create` is going to give us fine-grained control over our object later on
+
+```js
+const user3 = Object.create(null);
+
+user3.name = "Eva";
+user3.score = 9;
+user3.increment = function() {
+    user3.score++;
+};
+```
+
+Our code is getting repetitive, we're breaking our DRY principle. And suppose we have millions of users! What could we we do?
+
 ## Factory Functions Example
+
+```js
+function userCreator(name, score) {
+    const newUser = {};
+    newUser.name = name;
+    newUser.score = score;
+    newUser.increment = function() {
+        newUser.score++;
+    };
+    return newUser;
+}
+
+const user1 = userCreator("Sid", 3);
+const user2 = userCreator("Lem", 5);
+user1.increment();
+```
+
+This is what's known as a factory function. This is a function that returns an object.
 
 ## Prototype Chain
 
+Rather than having each user object contain an increment function, ideally you want _one_ increment function that is the same but contained on each of the user objects.
+
+![micro-task](/img/06-increment.png)
+
+Solution: Using the prototype chain
+
+Store the increment function in just one object and have the interpreter, if it doesn't find the function on user1, look up to that object to check if it's there.
+
+Link user1 and fcuntionStore so the interpreter, on not finding `.increment` makes sure to check up in the functionStore where it would find it.
+
+Make the link with `Object.create()` technique.
+
+```js
+function userCreator(name, score) {
+    const newUser = Object.create(userFunctionStore);
+    newUser.name = name;
+    newUser.score = score;
+    return newUser;
+};
+
+const userFunctionStore = {
+    increment: function(){this.score++},
+    login: function(){console.log("Logged in");}
+};
+
+const user1 = userCreator("Sid", 3);
+const user2 = userCreator("Lem", 5);
+
+user1.increment();
+```
+
 ## Prototype Chain Example: Prototypal Link
 
+![micro-task](/img/06-prototypal-link.png)
+
+When JS doesn't find a given property (method or data) on an object it goes to the proto property and looks up the prototype chain to see if it can find that method or data.
+
 ## Prototype Chain Example: Implicit Parameters
+
+
 
 ## hasOwnProperty Method
 
