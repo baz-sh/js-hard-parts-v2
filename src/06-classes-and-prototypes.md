@@ -149,7 +149,7 @@ user1.increment();
 
 ## Prototype Chain Example: Prototypal Link
 
-![micro-task](/img/06-prototypal-link.png)
+![proto-link](/img/06-prototypal-link.png)
 
 When JS doesn't find a given property (method or data) on an object it goes to the proto property and looks up the prototype chain to see if it can find that method or data.
 
@@ -161,6 +161,29 @@ When you call `.increment()` on an object JS will look up the prototype chain to
 
 ## hasOwnProperty Method
 
+What if we want to confirm our user1 has the property score?
+
+```js
+function userCreator(name, score) {
+    const newUser = Object.create(userFunctionStore);
+    newUser.name = name;
+    newUser.score = score;
+    return newUser;
+}
+
+const userFunctionStore = {
+    increment: function() {this.score++},
+    login: function() {console.log(`${this.name} logged in`)}
+};
+
+const user1 = userCreator("Sid", 3);
+const user2 = userCreator("Lem", 5);
+user1.hasOwnProperty('score');
+```
+
+When you run the `user1.hasOwnProperty('score')` what happens is JS looks for the method "hasOwnProperty" on the user1 object. It doesn't exist so it looks up the chain to userFunctionStore. This doesn't have it either so it follows it's proto chain until it hits `Object.prototype` which _does_ have the hasOwnProperty method. At which point it's grabbed and ran.
+
+![proto-object](/img/06-proto-object.png)
 
 
 ## this Keyword
