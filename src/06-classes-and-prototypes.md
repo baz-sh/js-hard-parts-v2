@@ -161,6 +161,8 @@ When you call `.increment()` on an object JS will look up the prototype chain to
 
 ## hasOwnProperty Method
 
+
+
 ## this Keyword
 
 ## Arrow Function Scoppe & this
