@@ -185,14 +185,66 @@ When you run the `user1.hasOwnProperty('score')` what happens is JS looks for th
 
 ![proto-object](/img/06-proto-object.png)
 
-## Arrow Function Scoppe & this
-
-
-
-## Prototype Chain Review
-
 ## new Keyword
+
+When we call the function that returns an object with `new` in front we automate 2 things.
+
+1. Create a new user object
+2. Return the new user object
+
+But now we need to adjust how we write the body of userCreator - how can we:
+
+* Refer to the uato-created object?
+* Know where to put our single copies of functions?
 
 ## new Keyword Example
 
+The new keyword automates a lot of our manual work.
+
+```js
+function userCreator(name ,score) {
+    this.name = name;
+    this.score = score;
+}
+
+userCreator.prototype.increment = function() { this.score ++ };
+userCreator.prototype.login = function() { console.log("login"); };
+
+const user1 = new userCreator("Eva", 9);
+
+user1.increment();
+```
+
+![new-keyword](/img/06-new-keyword.png)
+
+Introducing the keyword that automates the hard work: new
+
+### Benefit
+
+Faster to write. Often used in practice in professional code.
+
+### Problems
+
+95% of developers have no idea how it works and therefore fail interviews
+
+We have to upper case first letter of the function so that we know it requires `new` to work.
+
 ## class Keyword
+
+The class 'syntactic sugar'. We're writing our shared methods separately from our object 'constructor' itself (off in the `userCreator.prototype` object)
+
+Other languages let us do this all in one place. ES2015 lets us do so too.
+
+```js
+class UserCreator {
+    constructor(name, score) {
+        this.name = name;
+        this.score = score;
+    }
+    increment() { this.score++ };
+    login() { console.log("login"); }
+}
+
+const user1 = new UserCreator("Eva", 9);
+user1.increment();
+```
